@@ -30,6 +30,16 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/shared/scss/root/bootstrap",
+                "src/app/shared/scss/root/boxicons",
+                "src/app/shared/scss/root/remixicon",
+                "src/app/shared/scss/root/venobox",
+                "src/app/shared/scss/root/owl.carousel/assets",
+                "src/app/shared/scss/homepage"
+              ]
+            },
             "scripts": [
               "src/assets/vendor/jquery/jquery.min.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
