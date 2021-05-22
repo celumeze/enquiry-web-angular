@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { PricingListComponent } from './pricing-list/pricing-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PricingListComponent } from './pricing-list/pricing-list.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],
