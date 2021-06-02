@@ -7,7 +7,6 @@ import { SharedModule } from '../shared/shared.module';
 import { AppConstants } from '../shared/utility/app-constants';
 import { apiConfig, b2cPolcies } from '../shared/utility/b2c-config';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -59,7 +58,6 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
 
 @NgModule({
   declarations: [
-    RegisterComponent,
     LoginComponent
   ],
   imports: [
@@ -108,7 +106,6 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     LoginComponent,
     MsalRedirectComponent],
   exports: [
-    RegisterComponent,
     LoginComponent
   ]
 })
