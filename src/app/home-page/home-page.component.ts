@@ -8,7 +8,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit{
   loginDisplay = false;
 
   constructor(private authService: MsalService, private msalBroadcastService: MsalBroadcastService) { }
@@ -32,7 +32,6 @@ export class HomePageComponent implements OnInit {
 
   setLoginDisplay() {
     this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
-    console.log(this.authService.instance.getAllAccounts().length + 'trueorfalse')
   }
 
 }
