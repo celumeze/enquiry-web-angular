@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MsalGuard } from '@azure/msal-angular';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ShellComponent } from './layouts/shell/shell.component';
 
 
 
 const appRoutes: Routes = [
+  {
+    path: 'accounts',
+    component: ShellComponent,
+    canActivate: [MsalGuard],
+    children: [
+      { path: 'accounts', redirectTo: '/dashboard/dashboard', pathMatch: 'full' },
+			{
+				path: 'dashboard',
+				loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+			},
+    ]
+  },
   {
     path: '',
     component: HomePageComponent
@@ -17,12 +32,12 @@ const appRoutes: Routes = [
   {
     // Needed for hash routing
     path: 'state',
-    component: HomePageComponent
+    component: ShellComponent
   },
   {
     // Needed for hash routing
     path: 'code',
-    component: HomePageComponent
+    component: ShellComponent
   },
 ];
 const isIframe = window !== window.parent && !window.opener;

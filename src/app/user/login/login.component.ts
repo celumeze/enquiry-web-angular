@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MsalBroadcastService, MsalGuardConfiguration, MsalService, MSAL_GUARD_CONFIG } from '@azure/msal-angular';
 import { AuthenticationResult, EventMessage, EventType, InteractionStatus, InteractionType, PopupRequest, RedirectRequest } from '@azure/msal-browser';
 import { Subject, Subscription } from 'rxjs';
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit{
   constructor(
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
     private authService: MsalService,
-    private msalBroadcastService: MsalBroadcastService
+    private msalBroadcastService: MsalBroadcastService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -82,6 +84,7 @@ export class LoginComponent implements OnInit{
 
   login(userFlowRequest?: RedirectRequest | PopupRequest) {
     if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
+      console.log('sdsdsd');
       if (this.msalGuardConfig.authRequest) {
         this.authService.loginPopup({...this.msalGuardConfig.authRequest, ...userFlowRequest} as PopupRequest)
           .subscribe((response: AuthenticationResult) => {
@@ -96,6 +99,7 @@ export class LoginComponent implements OnInit{
     } else {
       if (this.msalGuardConfig.authRequest){
         this.authService.loginRedirect({...this.msalGuardConfig.authRequest, ...userFlowRequest} as RedirectRequest);
+        this.router.navigate(['/accounts']);
       } else {
         this.authService.loginRedirect(userFlowRequest);
       }

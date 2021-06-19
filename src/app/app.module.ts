@@ -11,6 +11,8 @@ import { PricingListComponent } from './home-page/pricing-list/pricing-list.comp
 import { SharedModule } from './shared/shared.module';
 import { apiConfig, b2cPolicies } from './shared/utility/b2c-config';
 import { UserModule } from './user/user.module';
+import { ShellComponent } from './layouts/shell/shell.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -23,7 +25,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     auth: {
       clientId: '3402051b-96d7-4404-a7a3-70ba114606c3',
       authority: b2cPolicies.authorities.signUpSignIn.authority,
-      redirectUri: 'http://localhost:4200/',
+      redirectUri: 'http://localhost:4200/accounts',
       postLogoutRedirectUri: '/',
       knownAuthorities: [b2cPolicies.authorityDomain]
     },
@@ -64,13 +66,15 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
   declarations: [
     AppComponent,
     HomePageComponent,
-    PricingListComponent
+    PricingListComponent,
+    ShellComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     UserModule,
+    DashboardModule,
     MsalModule
   ],
   providers: [
