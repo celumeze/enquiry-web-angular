@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -15,9 +17,12 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     CommonModule,
+    MaterialModule
   ],
   exports: [
     CommonModule,
+    MaterialModule,
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,

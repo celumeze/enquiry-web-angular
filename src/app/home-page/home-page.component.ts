@@ -13,8 +13,7 @@ export class HomePageComponent implements OnInit{
   loginDisplay = false;
 
   constructor(private authService: MsalService, 
-              private msalBroadcastService: MsalBroadcastService,
-              private router: Router) { }
+              private msalBroadcastService: MsalBroadcastService) { }
 
   ngOnInit(): void {
     this.msalBroadcastService.msalSubject$
@@ -23,7 +22,6 @@ export class HomePageComponent implements OnInit{
       )
       .subscribe({
         next: (result: EventMessage) => {
-          console.log(result);
           const payload = result.payload as AuthenticationResult;
           this.authService.instance.setActiveAccount(payload.account);
         },

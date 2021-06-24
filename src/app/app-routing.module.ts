@@ -21,23 +21,26 @@ const appRoutes: Routes = [
     ]
   },
   {
-    path: '',
-    component: HomePageComponent
-  },
-  {
     // Needed for hash routing
     path: 'error',
     component: HomePageComponent
   },
-  {
+  {   
     // Needed for hash routing
     path: 'state',
-    component: ShellComponent
+    component: ShellComponent,
+    canActivate: [MsalGuard],
   },
   {
     // Needed for hash routing
     path: 'code',
-    component: ShellComponent
+    component: ShellComponent,
+    canActivate: [MsalGuard]
+  },
+
+  {
+    path: '',
+    component: HomePageComponent
   },
 ];
 const isIframe = window !== window.parent && !window.opener;

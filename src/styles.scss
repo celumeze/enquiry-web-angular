@@ -1,6 +1,9 @@
+@import '@angular/material/prebuilt-themes/purple-green.css';
 @import 'bootstrap.min.scss';
 @import 'boxicons.min.scss';
 @import 'remixicon.scss';
 @import 'venobox.scss';
 @import 'owl.carousel.min.scss';
 @import 'homepage';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
