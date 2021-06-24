@@ -84,7 +84,6 @@ export class LoginComponent implements OnInit{
 
   login(userFlowRequest?: RedirectRequest | PopupRequest) {
     if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
-      console.log('sdsdsd');
       if (this.msalGuardConfig.authRequest) {
         this.authService.loginPopup({...this.msalGuardConfig.authRequest, ...userFlowRequest} as PopupRequest)
           .subscribe((response: AuthenticationResult) => {
@@ -98,7 +97,7 @@ export class LoginComponent implements OnInit{
       }
     } else {
       if (this.msalGuardConfig.authRequest){
-        this.authService.loginRedirect({...this.msalGuardConfig.authRequest, ...userFlowRequest} as RedirectRequest);
+        // this.authService.loginRedirect({...this.msalGuardConfig.authRequest, ...userFlowRequest} as RedirectRequest);
         this.router.navigate(['/accounts']);
       } else {
         this.authService.loginRedirect(userFlowRequest);

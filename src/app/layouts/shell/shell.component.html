@@ -1,5 +1,76 @@
-<app-dashboard></app-dashboard>
+  <mat-sidenav-container class="accounts-container mat-typography" autosize>
+    <!---Begin Side Nav-->
+   <mat-sidenav #sidenav
+         [disableClose]="isScreenSmall ? 'false' : 'true'" 
+         mat-elevation-z20 
+         [mode]="isScreenSmall ? 'over' : 'side'" 
+         [opened]="!isScreenSmall" 
+         color="accent">
+      <button mat-mini-fab aria-label="Example icon-button with menu icon" 
+        style="margin: 10px;"
+        color="accent" 
+        (click)="isExpanded = !isExpanded">
+        <mat-icon aria-label="Menu">menu</mat-icon>
+      </button><br>
+       <mat-nav-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon aria-label="dashboard" title="Dashboard">leaderboard</mat-icon>
+            <h5 mat-line *ngIf="isExpanded">Dashboard</h5>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon aria-label="knowledgebase" title="Knowledge Base">article</mat-icon>
+            <h5 mat-line *ngIf="isExpanded">Knowledge Base</h5>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon aria-label="enquirysettings" title="Enquiry Settings">build</mat-icon>
+            <h5 mat-line *ngIf="isExpanded">Enquiry Settings</h5>
+          </mat-list-item>          
+          <mat-list-item>
+            <mat-icon mat-list-icon aria-label="users" title="Users">people</mat-icon>
+            <h5 mat-line *ngIf="isExpanded">Users</h5>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon aria-label="integrations" title="Integrations">sync_alt</mat-icon>
+            <h5 mat-line *ngIf="isExpanded">Integrations</h5>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon aria-label="subscription" title="Subscription">card_membership</mat-icon>
+            <h5 mat-line *ngIf="isExpanded">Subscription</h5>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon aria-label="profile" title="Profile">person</mat-icon>
+            <h5 mat-line *ngIf="isExpanded">Profile</h5>
+          </mat-list-item>
+        </mat-nav-list>          
+    </mat-sidenav>  
+    <!---End Side Nav-->
+    <mat-sidenav-content>
+          <!--Toolbar-->
+          <mat-toolbar color="accent">
+            <button
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="sidenav.toggle()"
+              *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <button
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="sidenav.toggle()"
+              class="float-right">
+              <mat-icon aria-label="logout" title="Logout">logout</mat-icon>
+            </button>
+          </mat-toolbar><br>
+          
+          <!---Main Content--> 
+          <div class="accounts-sidenav-content container">
+            <app-dashboard></app-dashboard>
+            <router-outlet></router-outlet>     
+          </div>  
+      </mat-sidenav-content>  
+</mat-sidenav-container>
+<app-footer></app-footer>
 
-<div class="container-fluid">
-    <router-outlet></router-outlet>
-</div>

@@ -13,6 +13,13 @@ import { apiConfig, b2cPolicies } from './shared/utility/b2c-config';
 import { UserModule } from './user/user.module';
 import { ShellComponent } from './layouts/shell/shell.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -67,7 +74,7 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     AppComponent,
     HomePageComponent,
     PricingListComponent,
-    ShellComponent,
+    ShellComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +82,14 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     SharedModule,
     UserModule,
     DashboardModule,
-    MsalModule
+    MsalModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     {
