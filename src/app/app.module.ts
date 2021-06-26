@@ -20,6 +20,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { KnowledgeBaseModule } from './knowledge-base/knowledge-base.module';
+import { SettingsModule } from './settings/settings.module';
+import { SubUserModule } from './sub-user/sub-user.module';
+import { IntegrationModule } from './integration/integration.module';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -82,14 +86,13 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     SharedModule,
     UserModule,
     DashboardModule,
+    KnowledgeBaseModule,
+    SettingsModule,
+    SubUserModule,
+    IntegrationModule,
     MsalModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
+    LayoutModule
   ],
   providers: [
     {
