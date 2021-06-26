@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 const SMALL_WIDTH_BREAKPOIN = 720;
 @Component({
@@ -18,13 +19,15 @@ export class ShellComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver,
+             private router: Router) { }
 
   ngOnInit(): void {
     this.breakpointObserver.observe([`(max-width: ${SMALL_WIDTH_BREAKPOIN}px)`])
     .subscribe((state: BreakpointState) => {
        this.isScreenSmall = state.matches;
-    })
+    });
+    this.router.navigate(['/accounts/dashboard']);
   }
 
 }

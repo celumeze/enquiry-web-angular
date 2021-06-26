@@ -13,10 +13,30 @@ const appRoutes: Routes = [
     component: ShellComponent,
     canActivate: [MsalGuard],
     children: [
-      { path: 'accounts', redirectTo: '/dashboard/dashboard', pathMatch: 'full' },
+      { path: 'accounts', redirectTo: '/dashboard', pathMatch: 'full' },
 			{
 				path: 'dashboard',
 				loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+			},
+      {
+				path: 'knowledgebase',
+				loadChildren: () => import('./knowledge-base/knowledge-base.module').then(m => m.KnowledgeBaseModule)
+			},
+      {
+				path: 'settings',
+				loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
+			},
+      {
+				path: 'users',
+				loadChildren: () => import('./sub-user/sub-user.module').then(m => m.SubUserModule)
+			},
+      {
+				path: 'integrations',
+				loadChildren: () => import('./integration/integration.module').then(m => m.IntegrationModule)
+			},
+      {
+				path: 'subscription',
+				loadChildren: () => import('./subscription/subscription.module').then(m => m.SubscriptionModule)
 			},
     ]
   },
