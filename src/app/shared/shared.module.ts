@@ -7,6 +7,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SubscriptionCheckerComponent } from './components/subscription-checker/subscription-checker.component';
+import { PricingListComponent } from './components/pricing-list/pricing-list.component';
 
 
 
@@ -14,10 +16,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   declarations: [
     FooterComponent,
     HeaderComponent,
+    SubscriptionCheckerComponent,
+    PricingListComponent
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule  
   ],
   exports: [
     CommonModule,
@@ -28,7 +32,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NgbModule,
     HttpClientModule,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    PricingListComponent,
+    SubscriptionCheckerComponent
   ]
 })
 export class SharedModule { }

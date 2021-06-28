@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { PricingListComponent } from './home-page/pricing-list/pricing-list.component';
 import { SharedModule } from './shared/shared.module';
 import { apiConfig, b2cPolicies } from './shared/utility/b2c-config';
 import { UserModule } from './user/user.module';
@@ -77,7 +76,6 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
   declarations: [
     AppComponent,
     HomePageComponent,
-    PricingListComponent,
     ShellComponent
   ],
   imports: [

@@ -3,7 +3,8 @@
 export const b2cPolicies = {
     names: {
         signUpSignIn: "B2C_1_SignUpIn",
-        editProfile: "B2C_1_ProfileEdit"
+        editProfile: "B2C_1_ProfileEdit",
+        signUpOnly: "B2C_1_SignUpOnly"
     },
     authorities: {
         signUpSignIn: {
@@ -11,6 +12,9 @@ export const b2cPolicies = {
         },
         editProfile: {
             authority: "https://traviscomms.b2clogin.com/traviscomms.onmicrosoft.com/B2C_1_ProfileEdit"
+        },
+        signUpOnly: {
+            authority: "https://traviscomms.b2clogin.com/traviscomms.onmicrosoft.com/B2C_1_SignUpOnly"
         }
     },
     authorityDomain: "traviscomms.b2clogin.com"
@@ -18,6 +22,6 @@ export const b2cPolicies = {
 
 export const apiConfig: { scopes: string[]; uri: string } = {
   scopes: [""],
-  uri: ""
+  uri: "http://localhost:4200/#/accounts"
 };
 

@@ -4,7 +4,10 @@ import { SubUserComponent } from './sub-user.component';
 
 const routes: Routes = [
   {
-    path: '', component: SubUserComponent
+    path: '', component: SubUserComponent,
+    data: {
+      title: 'Users'
+    }
   }
 ];
 

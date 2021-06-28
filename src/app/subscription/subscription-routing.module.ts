@@ -4,7 +4,10 @@ import { SubscriptionComponent } from './subscription.component';
 
 const routes: Routes = [
   {
-    path: '', component: SubscriptionComponent
+    path: '', component: SubscriptionComponent,
+    data: {
+      title: 'Subscription Info'
+    }
   }
 ];
 

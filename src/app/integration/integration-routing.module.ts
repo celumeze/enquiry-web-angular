@@ -4,7 +4,10 @@ import { IntegrationComponent } from './integration.component';
 
 const routes: Routes = [
   {
-    path: '', component: IntegrationComponent
+    path: '', component: IntegrationComponent,
+    data: {
+      title: 'Integrations'
+    }
   }
 ];
 
