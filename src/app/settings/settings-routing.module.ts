@@ -4,7 +4,10 @@ import { SettingsComponent } from './settings.component';
 
 const routes: Routes = [
   {
-    path: '', component: SettingsComponent
+    path: '', component: SettingsComponent,
+    data: {
+      title: 'Enquiry Settings'
+    }
   }
 ];
 

@@ -4,7 +4,10 @@ import { KnowledgeBaseComponent } from './knowledge-base.component';
 
 const routes: Routes = [
   {
-    path: '', component: KnowledgeBaseComponent
+    path: '', component: KnowledgeBaseComponent,
+    data: {
+      title: 'Knowledge Base'
+    }
   }
 ];
 

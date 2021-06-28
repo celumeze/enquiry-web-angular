@@ -1,1 +1,4 @@
-<p>settings works!</p>
+<p *ngIf="isPayingOrTrialAuthenticatedUser">settings works!</p>
+<h4 *ngIf="!isPayingOrTrialAuthenticatedUser">Choose Plan to access {{pageTitle}}</h4>
+<app-subscription-checker *ngIf="!isPayingOrTrialAuthenticatedUser">
+</app-subscription-checker>
