@@ -23,6 +23,8 @@ import { KnowledgeBaseModule } from './knowledge-base/knowledge-base.module';
 import { SettingsModule } from './settings/settings.module';
 import { SubUserModule } from './sub-user/sub-user.module';
 import { IntegrationModule } from './integration/integration.module';
+import { StoreModule } from '@ngrx/store';
+import { layoutReducer } from './layouts/state/layout.reducer';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -90,7 +92,9 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     IntegrationModule,
     MsalModule,
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
+    StoreModule.forRoot({}, {}),
+    StoreModule.forFeature('layout', layoutReducer ) ,
   ],
   providers: [
     {
