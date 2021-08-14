@@ -7,7 +7,7 @@ export const environment = {
   //Stripe publishable Key
   stripe: "pk_test_51Ihg8qLWSmhJ473i1ly09OXt6K8T6DkLYO7gFQbbRziRqtjpIxxoL2viq8vh0ib1ZHO0xbYitOXP650wgnSVMb05004xenmBLH",
   apiUrl: "https://localhost:44381",
-  isPayingOrTrialCustomer: false
+  isPayingOrTrialCustomer: true
 };
 
 /*

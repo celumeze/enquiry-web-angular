@@ -1,0 +1,18 @@
+<mat-tab-group 
+mat-stretch-tabs
+mat-align-tabs="center" *ngIf="isPayingOrTrialAuthenticatedUser">
+    <mat-tab label="ENQUIRY INSIGHTS"> 
+      <br>
+        Enquiry Insights
+    </mat-tab> 
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span [matBadge]="qnaPairCount" matBadgeOverlap="false">QUESTIONS & ANSWERS</span>
+        </ng-template>
+        <br>
+        Questions & Answers Info
+    </mat-tab>         
+  </mat-tab-group>
+<h4 *ngIf="!isPayingOrTrialAuthenticatedUser">Choose Plan to access {{pageTitle}}</h4>
+<app-subscription-checker *ngIf="!isPayingOrTrialAuthenticatedUser">
+</app-subscription-checker>

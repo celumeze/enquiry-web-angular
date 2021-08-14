@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { KnowledgeBaseComponent } from './knowledge-base.component';
+import { KnowledgeBaseMainComponent } from './knowledge-base-main/knowledge-base-main.component';
+import { KnowledgeBaseShellComponent } from './knowledge-base-shell/knowledge-base-shell.component';
 
 const routes: Routes = [
   {
-    path: '', component: KnowledgeBaseComponent,
+    path: '', component: KnowledgeBaseShellComponent,
     data: {
       title: 'Knowledge Base'
     }

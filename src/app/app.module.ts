@@ -24,7 +24,9 @@ import { SettingsModule } from './settings/settings.module';
 import { SubUserModule } from './sub-user/sub-user.module';
 import { IntegrationModule } from './integration/integration.module';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { layoutReducer } from './layouts/state/layout.reducer';
+import { environment } from 'src/environments/environment.prod';
 
 const isIE = window.navigator.userAgent.indexOf("MSIE ") > -1 || window.navigator.userAgent.indexOf("Trident/") > -1;
 
@@ -94,6 +96,11 @@ export function MSALGuardConfigFactory(): MsalGuardConfiguration {
     BrowserAnimationsModule,
     LayoutModule,
     StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ 
+      name: 'Enquire Now App Devtools',
+      maxAge: 25, 
+      logOnly: environment.production 
+    }),
     StoreModule.forFeature('layout', layoutReducer ) ,
   ],
   providers: [
