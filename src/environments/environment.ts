@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //Stripe publishable Key
-  stripe: "pk_test_51Ihg8qLWSmhJ473i1ly09OXt6K8T6DkLYO7gFQbbRziRqtjpIxxoL2viq8vh0ib1ZHO0xbYitOXP650wgnSVMb05004xenmBLH",
+  stripe: "",
   apiUrl: "https://localhost:44381",
   isPayingOrTrialCustomer: true
 };
