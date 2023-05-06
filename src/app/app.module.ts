@@ -37,7 +37,7 @@ export function loggerCallback(logLevel: LogLevel, message: string) {
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
-      clientId: '3402051b-96d7-4404-a7a3-70ba114606c3',
+      clientId: '',
       authority: b2cPolicies.authorities.signUpSignIn.authority,
       redirectUri: 'http://localhost:4200/accounts',
       postLogoutRedirectUri: '/',
